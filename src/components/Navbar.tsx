@@ -21,11 +21,7 @@ export function Navbar() {
     <header className="sticky top-0 md:py-8 py-4 z-50 border-b border-border/60 bg-background/85 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link to="/" className="flex items-center">
-          <img
-            src="/logo_web.png"
-            alt=" Logo"
-            className="h-9 w-auto object-contain md:h-20"
-          />
+          <img src="/logo_web.png" alt=" Logo" className="h-9 w-auto object-contain md:h-20" />
         </Link>
 
         <nav className="hidden items-center gap-1 md:flex">
@@ -35,8 +31,9 @@ export function Navbar() {
               <Link
                 key={l.to}
                 to={l.to}
-                className={`rounded-md px-3 py-2 text-sm font-medium transition-colors ${active ? "text-primary" : "text-muted-foreground hover:text-foreground"
-                  }`}
+                className={`rounded-md px-3 py-2 text-sm font-medium transition-colors ${
+                  active ? "text-primary" : "text-muted-foreground hover:text-foreground"
+                }`}
               >
                 {l.label}
               </Link>

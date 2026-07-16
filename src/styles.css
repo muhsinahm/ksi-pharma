@@ -54,18 +54,18 @@
   /* Brand Logo Red - Used for strong UI anchors & primary buttons */
   --primary: oklch(0.62 0.23 28);
   --primary-foreground: oklch(0.99 0 0);
-  --primary-glow: oklch(0.70 0.18 32);
+  --primary-glow: oklch(0.7 0.18 32);
 
   /* Warm Cream - Soft, clinical, comforting surfaces */
   --secondary: oklch(0.97 0.02 90);
   --secondary-foreground: oklch(0.35 0.03 35);
 
   /* Brand Logo Brown - Darkened slightly for perfect contrast with white text */
-  --accent: oklch(0.42 0.06 55); 
+  --accent: oklch(0.42 0.06 55);
   --accent-foreground: oklch(0.99 0 0);
 
   --muted: oklch(0.97 0.004 90);
-  --muted-foreground: oklch(0.50 0.02 30);
+  --muted-foreground: oklch(0.5 0.02 30);
 
   /* Safe Clinical Green */
   --success: oklch(0.65 0.17 145);
@@ -108,7 +108,7 @@
   --success: oklch(0.72 0.15 150);
   --success-foreground: black;
 
-  --destructive: oklch(0.58 0.20 24);
+  --destructive: oklch(0.58 0.2 24);
   --destructive-foreground: white;
 
   --border: oklch(1 0 0 / 12%);
@@ -141,9 +141,11 @@
 }
 
 @utility bg-hero-gradient {
-  background-image: linear-gradient(135deg,
-      color-mix(in oklab, var(--primary) 8%, var(--background)) 0%,
-      color-mix(in oklab, var(--accent) 6%, var(--background)) 100%);
+  background-image: linear-gradient(
+    135deg,
+    color-mix(in oklab, var(--primary) 8%, var(--background)) 0%,
+    color-mix(in oklab, var(--accent) 6%, var(--background)) 100%
+  );
 }
 
 @utility bg-primary-gradient {

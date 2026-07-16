@@ -88,10 +88,11 @@ function ProductsPage() {
             <div className="mt-2 flex flex-col gap-1">
               <button
                 onClick={() => setCategory("")}
-                className={`rounded-md px-3 py-2 text-left text-sm transition ${!category
+                className={`rounded-md px-3 py-2 text-left text-sm transition ${
+                  !category
                     ? "bg-primary/10 font-medium text-primary"
                     : "text-muted-foreground hover:bg-muted"
-                  }`}
+                }`}
               >
                 All categories
               </button>
@@ -99,10 +100,11 @@ function ProductsPage() {
                 <button
                   key={c}
                   onClick={() => setCategory(c)}
-                  className={`rounded-md px-3 py-2 text-left text-sm transition ${category === c
+                  className={`rounded-md px-3 py-2 text-left text-sm transition ${
+                    category === c
                       ? "bg-primary/10 font-medium text-primary"
                       : "text-muted-foreground hover:bg-muted"
-                    }`}
+                  }`}
                 >
                   {c}
                 </button>

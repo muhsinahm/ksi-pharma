@@ -58,9 +58,7 @@ function AboutPage() {
     <>
       <section className="bg-hero-gradient">
         <div className="mx-auto max-w-4xl px-4 py-20 text-center sm:px-6 lg:px-8">
-          <p className="text-sm font-medium uppercase tracking-wider text-primary">
-            About
-          </p>
+          <p className="text-sm font-medium uppercase tracking-wider text-primary">About</p>
           <h1 className="mt-3 font-display text-4xl font-bold sm:text-5xl">
             Making healthcare safer, one prescription at a time
           </h1>
@@ -76,10 +74,9 @@ function AboutPage() {
           <div>
             <h2 className="font-display text-3xl font-bold">Our Mission</h2>
             <p className="mt-4 leading-relaxed text-muted-foreground">
-              Access to authentic medicine should never be a privilege.  was founded to
-              bring transparent, licensed pharmacy services to every home in Pakistan — with the
-              assurance that every product on our shelves has been verified, tracked, and delivered
-              safely.
+              Access to authentic medicine should never be a privilege. was founded to bring
+              transparent, licensed pharmacy services to every home in Pakistan — with the assurance
+              that every product on our shelves has been verified, tracked, and delivered safely.
             </p>
             <p className="mt-4 leading-relaxed text-muted-foreground">
               From a family paracetamol to specialty chronic-care medication, our licensed
