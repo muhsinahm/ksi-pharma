@@ -4,13 +4,13 @@ import { ShieldCheck, HeartPulse, Microscope, Users, Award, Truck } from "lucide
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Us — MediCareRx" },
+      { title: "About Us — " },
       {
         name: "description",
         content:
-          "MediCareRx is a DRAP-licensed online pharmacy in Pakistan committed to authentic medicines and safe healthcare delivery.",
+          " is a DRAP-licensed online pharmacy in Pakistan committed to authentic medicines and safe healthcare delivery.",
       },
-      { property: "og:title", content: "About MediCareRx" },
+      { property: "og:title", content: "About " },
       {
         property: "og:description",
         content: "Our mission, licensing, and commitment to safe healthcare.",
@@ -59,7 +59,7 @@ function AboutPage() {
       <section className="bg-hero-gradient">
         <div className="mx-auto max-w-4xl px-4 py-20 text-center sm:px-6 lg:px-8">
           <p className="text-sm font-medium uppercase tracking-wider text-primary">
-            About MediCareRx
+            About
           </p>
           <h1 className="mt-3 font-display text-4xl font-bold sm:text-5xl">
             Making healthcare safer, one prescription at a time
@@ -76,7 +76,7 @@ function AboutPage() {
           <div>
             <h2 className="font-display text-3xl font-bold">Our Mission</h2>
             <p className="mt-4 leading-relaxed text-muted-foreground">
-              Access to authentic medicine should never be a privilege. MediCareRx was founded to
+              Access to authentic medicine should never be a privilege.  was founded to
               bring transparent, licensed pharmacy services to every home in Pakistan — with the
               assurance that every product on our shelves has been verified, tracked, and delivered
               safely.

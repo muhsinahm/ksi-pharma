@@ -10,13 +10,13 @@ export function ProductCard({ product }: { product: Product }) {
       <Link
         to="/products/$id"
         params={{ id: product.id }}
-        className="relative block aspect-square overflow-hidden bg-muted"
+        className="relative block aspect-square overflow-hidden bg-white"
       >
         <img
           src={product.image}
           alt={product.name}
           loading="lazy"
-          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-105"
         />
         {!product.inStock && (
           <Badge

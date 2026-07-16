@@ -80,14 +80,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "MediCareRx — Trusted Online Pharmacy in Pakistan" },
+      { title: "KS International — Trusted Online Pharmacy in Pakistan" },
       {
         name: "description",
         content:
           "Order authentic medicines, vitamins, and healthcare essentials online. Licensed pharmacy with nationwide delivery across Pakistan.",
       },
-      { name: "author", content: "MediCareRx" },
-      { property: "og:title", content: "MediCareRx — Trusted Online Pharmacy" },
+      { name: "author", content: "KS International" },
+      { property: "og:title", content: "KS International — Trusted Online Pharmacy" },
       {
         property: "og:description",
         content: "Authentic medicines and healthcare products delivered across Pakistan.",

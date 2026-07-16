@@ -85,7 +85,7 @@ export function Footer() {
             Pakistan.
           </p>
           <p className="mt-4 text-xs text-muted-foreground">
-            © {new Date().getFullYear()} MediCareRx. All rights reserved.
+            © {new Date().getFullYear()} . All rights reserved.
           </p>
         </div>
       </div>

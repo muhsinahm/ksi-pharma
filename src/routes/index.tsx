@@ -30,7 +30,7 @@ function Home() {
     <>
       {/* Hero */}
       <section className="relative overflow-hidden bg-hero-gradient">
-        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
+        <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-background/60 px-3 py-1 text-xs font-medium text-primary backdrop-blur">
               <BadgeCheck className="h-3.5 w-3.5" />
@@ -110,7 +110,7 @@ function Home() {
         <div className="mb-8 flex items-end justify-between gap-4">
           <div>
             <p className="text-sm font-medium uppercase tracking-wider text-primary">Featured</p>
-            <h2 className="mt-1 font-display text-3xl font-bold sm:text-4xl">Popular this week</h2>
+            <h2 className="mt-1 font-display text-3xl font-bold sm:text-4xl">Products we have</h2>
           </div>
           <Button asChild variant="outline">
             <Link to="/products">View all</Link>
@@ -128,8 +128,8 @@ function Home() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="hidden sm:flex" />
-          <CarouselNext className="hidden sm:flex" />
+          <CarouselPrevious />
+          <CarouselNext />
         </Carousel>
       </section>
 

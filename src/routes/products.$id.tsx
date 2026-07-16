@@ -15,15 +15,15 @@ export const Route = createFileRoute("/products/$id")({
   head: ({ loaderData }) => {
     if (!loaderData) {
       return {
-        meta: [{ title: "Product not found — MediCareRx" }, { name: "robots", content: "noindex" }],
+        meta: [{ title: "Product not found — " }, { name: "robots", content: "noindex" }],
       };
     }
     const { product } = loaderData;
     return {
       meta: [
-        { title: `${product.name} — MediCareRx` },
+        { title: `${product.name} — ` },
         { name: "description", content: product.description.slice(0, 155) },
-        { property: "og:title", content: `${product.name} — MediCareRx` },
+        { property: "og:title", content: `${product.name} — ` },
         { property: "og:description", content: product.description.slice(0, 155) },
         { property: "og:image", content: product.image },
         { name: "twitter:image", content: product.image },

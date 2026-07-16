@@ -11,13 +11,13 @@ import { Label } from "@/components/ui/label";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact Us — MediCareRx" },
+      { title: "Contact Us — " },
       {
         name: "description",
         content:
-          "Reach MediCareRx pharmacists in Pakistan. Call, email, or send us a message — we typically respond within a few hours.",
+          "Reach  pharmacists in Pakistan. Call, email, or send us a message — we typically respond within a few hours.",
       },
-      { property: "og:title", content: "Contact MediCareRx" },
+      { property: "og:title", content: "Contact " },
       {
         property: "og:description",
         content: "Get in touch with our licensed pharmacy team.",
@@ -51,7 +51,7 @@ const info = [
   {
     icon: Mail,
     label: "Email",
-    lines: ["care@medicarerx.pk", "support@medicarerx.pk"],
+    lines: ["care@.pk", "support@.pk"],
   },
   {
     icon: Clock,

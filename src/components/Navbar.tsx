@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
-import { Menu, ShoppingCart, X, Pill } from "lucide-react";
+import { Menu, ShoppingCart, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useCartCount } from "@/lib/cart-store";
@@ -18,15 +18,14 @@ export function Navbar() {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border/60 bg-background/85 backdrop-blur-md">
+    <header className="sticky top-0 md:py-8 py-4 z-50 border-b border-border/60 bg-background/85 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <Link to="/" className="flex items-center gap-2">
-          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary-gradient text-primary-foreground shadow-sm">
-            <Pill className="h-5 w-5" />
-          </span>
-          <span className="font-display text-xl font-bold tracking-tight">
-            MediCare<span className="text-primary">Rx</span>
-          </span>
+        <Link to="/" className="flex items-center">
+          <img
+            src="/logo_web.png"
+            alt=" Logo"
+            className="h-9 w-auto object-contain md:h-20"
+          />
         </Link>
 
         <nav className="hidden items-center gap-1 md:flex">
@@ -36,9 +35,8 @@ export function Navbar() {
               <Link
                 key={l.to}
                 to={l.to}
-                className={`rounded-md px-3 py-2 text-sm font-medium transition-colors ${
-                  active ? "text-primary" : "text-muted-foreground hover:text-foreground"
-                }`}
+                className={`rounded-md px-3 py-2 text-sm font-medium transition-colors ${active ? "text-primary" : "text-muted-foreground hover:text-foreground"
+                  }`}
               >
                 {l.label}
               </Link>
