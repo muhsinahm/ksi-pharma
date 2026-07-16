@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { products, formatPKR } from "@/data/products";
 import { cart } from "@/lib/cart-store";
 
-export const Route = createFileRoute("/products/$id")({
+export const Route = createFileRoute("/products_/$id")({
   loader: ({ params }) => {
     const product = products.find((p) => p.id === params.id);
     if (!product) throw notFound();
