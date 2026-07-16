@@ -3,18 +3,14 @@ import { Pill, ShieldCheck, Truck, HeartPulse } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="mt-24 border-t border-border/60 bg-surface">
+    <footer className="mt-24 border-t border-border/60 bg-primary/10">
       <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
         <div className="grid gap-10 md:grid-cols-4">
           <div>
-            <div className="flex items-center gap-2">
-              <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary-gradient text-primary-foreground">
-                <Pill className="h-5 w-5" />
-              </span>
-              <span className="font-display text-xl font-bold">
-                MediCare<span className="text-primary">Rx</span>
-              </span>
-            </div>
+            <Link to="/" className="flex items-center">
+              <img src="/logo_web.png" alt=" Logo" className="h-9 w-auto object-contain md:h-20" />
+            </Link>
+            <span className="mx-2">·</span>
             <p className="mt-3 text-sm text-muted-foreground">
               Your trusted online pharmacy delivering authentic medicines across Pakistan.
             </p>
