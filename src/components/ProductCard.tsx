@@ -29,12 +29,12 @@ export function ProductCard({ product }: { product: Product }) {
       </Link>
       <CardContent className="flex flex-1 flex-col gap-3 p-5">
         <div className="flex-1">
-          <p className="text-xs font-medium uppercase tracking-wider text-primary">
-            {product.category}
-          </p>
           <h3 className="mt-1 line-clamp-2 font-display text-lg font-semibold leading-snug text-foreground">
             {product.name}
           </h3>
+          <p className="text-xs font-medium uppercase tracking-wider text-primary">
+            {product.category}
+          </p>
         </div>
         <div className="flex items-center justify-between gap-2">
           <span className="font-display text-xl font-bold text-foreground">
