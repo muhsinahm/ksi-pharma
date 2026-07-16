@@ -128,8 +128,8 @@ function Home() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
+          <CarouselPrevious className="left-4 xl:-left-12" />
+          <CarouselNext className="right-4 xl:-right-12" />
         </Carousel>
       </section>
 
