@@ -1,13 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Search, ShieldCheck, Truck, BadgeCheck, Clock } from "lucide-react";
 import { useState } from "react";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ProductCard } from "@/components/ProductCard";
@@ -117,20 +111,11 @@ function Home() {
           </Button>
         </div>
 
-        <Carousel opts={{ align: "start", loop: true }}>
-          <CarouselContent className="-ml-4">
-            {products.map((p) => (
-              <CarouselItem
-                key={p.id}
-                className="basis-full pl-4 sm:basis-1/2 lg:basis-1/3 xl:basis-1/4"
-              >
-                <ProductCard product={p} />
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious className="left-4 xl:-left-12" />
-          <CarouselNext className="right-4 xl:-right-12" />
-        </Carousel>
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {products.map((p) => (
+            <ProductCard key={p.id} product={p} />
+          ))}
+        </div>
       </section>
 
       {/* Trust band */}
