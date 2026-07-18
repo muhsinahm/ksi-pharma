@@ -5,13 +5,25 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ProductCard } from "@/components/ProductCard";
-import { products, categories } from "@/data/products";
+import { categories } from "@/lib/constants";
+import { createServerFn } from "@tanstack/react-start";
+import { db } from "@/db";
+import { products as productsSchema } from "@/db/schema";
+
+const getFeaturedProducts = createServerFn({ method: "GET" }).handler(async () => {
+  return await db.select().from(productsSchema).limit(4);
+});
 
 export const Route = createFileRoute("/")({
+  loader: async () => {
+    const products = await getFeaturedProducts();
+    return { products };
+  },
   component: Home,
 });
 
 function Home() {
+  const { products } = Route.useLoaderData();
   const [q, setQ] = useState("");
   const navigate = Route.useNavigate();
 

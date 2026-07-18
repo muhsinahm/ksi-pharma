@@ -2,7 +2,8 @@ import { Link } from "@tanstack/react-router";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { formatPKR, type Product } from "@/data/products";
+import { formatPKR } from "@/lib/utils";
+import type { Product } from "@/db/schema";
 
 export function ProductCard({ product }: { product: Product }) {
   return (

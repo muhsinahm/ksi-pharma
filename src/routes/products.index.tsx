@@ -7,7 +7,14 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { ProductCard } from "@/components/ProductCard";
-import { products, categories } from "@/data/products";
+import { createServerFn } from "@tanstack/react-start";
+import { db } from "@/db";
+import { products as productsSchema } from "@/db/schema";
+import { categories } from "@/lib/constants";
+
+const getProducts = createServerFn({ method: "GET" }).handler(async () => {
+  return await db.select().from(productsSchema);
+});
 
 const searchSchema = z.object({
   q: fallback(z.string(), "").default(""),
@@ -16,6 +23,10 @@ const searchSchema = z.object({
 
 export const Route = createFileRoute("/products/")({
   validateSearch: zodValidator(searchSchema),
+  loader: async () => {
+    const products = await getProducts();
+    return { products };
+  },
   head: () => ({
     meta: [
       { title: "All Products — " },
@@ -35,6 +46,7 @@ export const Route = createFileRoute("/products/")({
 });
 
 function ProductsPage() {
+  const { products } = Route.useLoaderData();
   const { q, category } = Route.useSearch();
   const navigate = Route.useNavigate();
 
@@ -49,7 +61,7 @@ function ProductsPage() {
         p.category.toLowerCase().includes(query);
       return matchCat && matchQuery;
     });
-  }, [q, category]);
+  }, [q, category, products]);
 
   const setQ = (val: string) => navigate({ to: ".", search: { q: val, category } });
   const setCategory = (val: string) => navigate({ to: ".", search: { q, category: val } });
