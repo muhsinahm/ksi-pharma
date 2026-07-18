@@ -11,7 +11,7 @@ import { db } from "@/db";
 import { products as productsSchema } from "@/db/schema";
 
 const getFeaturedProducts = createServerFn({ method: "GET" }).handler(async () => {
-  return await db.select().from(productsSchema).limit(4);
+  return await db.select().from(productsSchema);
 });
 
 export const Route = createFileRoute("/")({
