@@ -43,7 +43,7 @@ export const products: Product[] = [
     name: "K-nol",
     description:
       "Comprehensive 85-piece first aid kit with bandages, antiseptics, gauze, scissors, and thermometer. Compact carry case ideal for home, office, and travel emergencies.",
-    price: 1447,
+    price: 1443,
     category: "Infertility",
     image: "/products/K-nol.png",
     inStock: false,
