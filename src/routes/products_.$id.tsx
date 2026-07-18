@@ -3,12 +3,23 @@ import { ShoppingCart, Zap, ShieldCheck, Truck, ArrowLeft } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { products, formatPKR } from "@/data/products";
+import { formatPKR } from "@/lib/utils";
+import { createServerFn } from "@tanstack/react-start";
+import { db } from "@/db";
+import { products as productsSchema } from "@/db/schema";
+import { eq } from "drizzle-orm";
+
+const getProduct = createServerFn({ method: "GET" })
+  .validator((id: string) => id)
+  .handler(async ({ data: id }) => {
+    const result = await db.select().from(productsSchema).where(eq(productsSchema.id, id));
+    return result[0] || null;
+  });
 import { cart } from "@/lib/cart-store";
 
 export const Route = createFileRoute("/products_/$id")({
-  loader: ({ params }) => {
-    const product = products.find((p) => p.id === params.id);
+  loader: async ({ params }) => {
+    const product = await getProduct({ data: params.id });
     if (!product) throw notFound();
     return { product };
   },
