@@ -1,3 +1,5 @@
+export type Composition = Record<string, string> | string[] | string;
+
 export interface Product {
   id: string;
   name: string;
@@ -6,6 +8,7 @@ export interface Product {
   category: string;
   image: string;
   inStock: boolean;
+  composition?: Composition;
 }
 
 export const categories = [
@@ -22,182 +25,250 @@ export const products: Product[] = [
     id: "vegi-wash",
     name: "Vegi Wash (200ml)",
     description:
-      "Comprehensive 85-piece first aid kit with bandages, antiseptics, gauze, scissors, and thermometer. Compact carry case ideal for home, office, and travel emergencies.",
+      "A gentle feminine intimate cleanser formulated to maintain hygiene, freshness, and the natural pH balance of the intimate area.",
     price: 997,
     category: "Feminine Intimate Cleanser",
     image: "/products/vegi_wash.png",
     inStock: true,
+    composition: ["Lactic Acid", "Triclosan", "Tea Tree Oil", "Vitamin E", "Aloe Vera"],
   },
   {
     id: "vegi-wash",
     name: "Vegi Wash (100ml)",
     description:
-      "Comprehensive 85-piece first aid kit with bandages, antiseptics, gauze, scissors, and thermometer. Compact carry case ideal for home, office, and travel emergencies.",
+      "A gentle feminine intimate cleanser formulated to maintain hygiene, freshness, and the natural pH balance of the intimate area.",
     price: 683,
     category: "Feminine Intimate Cleanser",
     image: "/products/vegi_wash.png",
     inStock: true,
+    composition: ["Lactic Acid", "Triclosan", "Tea Tree Oil", "Vitamin E", "Aloe Vera"],
   },
   {
     id: "k-nol",
     name: "K-nol",
     description:
-      "Comprehensive 85-piece first aid kit with bandages, antiseptics, gauze, scissors, and thermometer. Compact carry case ideal for home, office, and travel emergencies.",
+      "A nutritional supplement formulated to support women's reproductive health, hormonal balance, and overall wellness.",
     price: 1443,
-    category: "Infertility",
+    category: "Sachets",
     image: "/products/K-nol.png",
-    inStock: false,
+    inStock: true,
+    composition: {
+      "Myo-Inositol (DSC)": "2000mg",
+      "L-Methyl Folate (DSC)": "400mcg",
+      "Coenzyme Q10 (DSC)": "10mg",
+      "Melatonin (DSC)": "3mg",
+      "Vitamin B12 (DSC)": "2mcg",
+      "D-Chiroinositol (DSC)": "25mg",
+    },
   },
   {
     id: "k-vitum",
     name: "K-Vitum",
     description:
-      "Dermatologist recommended non-irritating cleanser for sensitive skin. Removes dirt and makeup without stripping natural moisture. Suitable for face and body. 250ml pump bottle.",
+      "A complete multivitamin and mineral supplement designed to support immunity, energy, and overall health.",
     price: 1000,
-    category: "Powerful Multivitamin",
+    category: "Balanced Therapeutic Multivitamin-Mineral Tablet",
     image: "/products/K-Vitum.png",
     inStock: true,
+    composition: "Complete multivitamin and mineral formulation.",
   },
   {
     id: "k-zyme",
     name: "k-zyme",
     description:
-      "Soothing dry cough relief for adults and children over 6. Non-drowsy formula with dextromethorphan. Cherry flavour, 120ml bottle. Provides up to 6 hours of relief.",
+      "A Coenzyme Q10 supplement that helps maintain heart health and supports natural cellular energy production.",
     price: 1800,
-    category: "Coenzyme Q10 50mg + 100mg",
+    category: "Tablets",
     image: "/products/k-zyme.png",
     inStock: true,
+    composition: {
+      "Ubidecarenone (USP)": "100mg",
+    },
   },
   {
     id: "m-care",
     name: "M-Care",
     description:
-      "Ibuprofen anti-inflammatory tablets for relief of pain, fever, and inflammation. Effective for arthritis, menstrual cramps, and back pain. Pack of 20 tablets.",
+      "A premium lanolin ointment that moisturizes, soothes, and protects dry, cracked, and sensitive skin.",
     price: 451,
-    category: "Skin and Nipple Ointment",
+    category: "Skin & Nipple Ointment",
     image: "/products/M-Care.png",
     inStock: true,
+    composition: {
+      "Pre-Premium Lanolin": "100% w/w",
+    },
   },
   {
     id: "k-nomia",
     name: "K-Nomia",
     description:
-      "Precision blood glucose test strips compatible with Accu-Chek Active meters. Fast 5-second results with only 1-2µL blood sample. Box of 50 strips.",
+      "A melatonin supplement formulated to promote restful sleep and support a healthy sleep cycle.",
     price: 753,
-    category: "Melatonin",
+    category: "Tablets",
     image: "/products/K-Nomia.png",
     inStock: true,
+    composition: {
+      Melatonin: "3mg",
+    },
   },
   {
     id: "k-kuf",
     name: "K-Kuf",
     description:
-      "Soothing dry cough relief for adults and children over 6. Non-drowsy formula with dextromethorphan. Cherry flavour, 120ml bottle. Provides up to 6 hours of relief.",
+      "A herbal cough syrup formulated with ivy leaf extract and thyme to help relieve cough and support respiratory health.",
     price: 250,
-    category: "Cold & Flu",
+    category: "Cough Syrup",
     image: "/products/K-Kuf.png",
     inStock: true,
+    composition: {
+      "Thyme (EP)": "20mg",
+      "IVY Leaf Extract (EP)": "35mg",
+      "Glycyrrhiza Glabra (DSC)": "15mg",
+    },
   },
-
   {
     id: "k-fer-tab",
     name: "K-Fer Tablet",
     description:
-      "High-potency Vitamin D3 softgels for bone health, immune support, and calcium absorption. Suitable for adults with limited sun exposure. 90 softgels per bottle.",
+      "An iron supplement enriched with folic acid and vitamin C to help prevent and manage iron deficiency anemia.",
     price: 593,
-    category: "ferrous bisglycinate + Folic Acid + Vitamic C",
+    category: "Tablets",
     image: "/products/K-Fer.png",
     inStock: true,
+    composition: {
+      "Ferrous Bisglycinate": "300mg",
+      "Folic Acid": "350mcg",
+      "Vitamin C": "60mg",
+    },
   },
   {
     id: "k-fer-syrup",
     name: "K-Fer Syrup",
     description:
-      "High-potency Vitamin D3 softgels for bone health, immune support, and calcium absorption. Suitable for adults with limited sun exposure. 90 softgels per bottle.",
+      "An iron supplement enriched with folic acid and vitamin C to help prevent and manage iron deficiency anemia.",
     price: 250,
-    category: "ferrous bisglycinate + Folic Acid + Vitamic C",
+    category: "Syrup",
     image: "/products/K-Fer.png",
     inStock: true,
+    composition: {
+      "Ferrous Bisglycinate": "300mg",
+      "Folic Acid": "350mcg",
+    },
   },
   {
     id: "k-folic",
     name: "k-folic",
     description:
-      "High-potency Vitamin D3 softgels for bone health, immune support, and calcium absorption. Suitable for adults with limited sun exposure. 90 softgels per bottle.",
+      "A folate and DHA supplement that supports healthy pregnancy, fetal development, and nutritional wellbeing.",
     price: 570,
-    category: "L-methylfolate",
+    category: "Tablets",
     image: "/products/k-folic.png",
     inStock: true,
+    composition: {
+      "L-Methylfolate USP": "400mcg",
+      "DHA USP": "10mg",
+    },
   },
   {
     id: "k-ca-tabs",
     name: "k-Ca+ Tablet",
     description:
-      "Complete daily multivitamin with 24 essential nutrients including Vitamin D, B12, Iron, and Zinc. Supports immunity, energy, and overall wellness. 60 tablets, one-a-day formula.",
+      "A calcium and vitamin D3 supplement formulated to support healthy bones, teeth, and muscle function.",
     price: 750,
-    category: "Vitamins & Supplements",
+    category: "Tablets",
     image: "/products/k-Ca+.png",
     inStock: true,
+    composition: {
+      "Calcium Carbonate (USP)": "600mg",
+      "Vitamin D3 (USP)": "400IU",
+      "Vitamin C (USP)": "50mg",
+    },
   },
   {
     id: "k-ca-syrup",
     name: "k-Ca+ Syrup",
     description:
-      "Complete daily multivitamin with 24 essential nutrients including Vitamin D, B12, Iron, and Zinc. Supports immunity, energy, and overall wellness. 60 tablets, one-a-day formula.",
+      "A calcium and vitamin D3 supplement formulated to support healthy bones, teeth, and muscle function.",
     price: 250,
-    category: "Vitamins & Supplements",
+    category: "Syrup",
     image: "/products/k-Ca+.png",
     inStock: true,
+    composition: {
+      "Calcium Carbonate (Per 10ml)": "600mg",
+      "Vitamin D3 (Per 10ml)": "400IU",
+    },
   },
   {
     id: "normarol",
     name: "Normarol",
     description:
-      "Precision blood glucose test strips compatible with Accu-Chek Active meters. Fast 5-second results with only 1-2µL blood sample. Box of 50 strips.",
+      "A Coenzyme Q10 supplement that supports cardiovascular health, energy production, and antioxidant protection.",
     price: 1550,
-    category: "Coenzyme Q10 50mg Soft Gell",
+    category: "Softgel Capsule",
     image: "/products/normarol.png",
     inStock: true,
+    composition: {
+      "Coenzyme Q10 (USP)": "50mg",
+    },
   },
   {
     id: "optidex",
     name: "OPTIDEX",
     description:
-      "Fast-acting pain relief tablets combining paracetamol and caffeine. Effective for headaches, migraines, muscle aches, and toothache. Pack of 30 tablets. Manufactured under strict GMP standards.",
+      "A soothing balm that provides effective relief from headaches, nasal congestion, colds, and flu symptoms.",
     price: 230,
-    category: "Relieves Headache, Cold & Flu Chest Congestion",
+    category: "Balm",
     image: "/products/OPTIDEX.png",
     inStock: true,
+    composition: {
+      "Menthol (USP)": "200mg",
+      "Clove Oil (USP)": "50mg",
+      "Eucalyptus Oil (USP)": "25mg",
+    },
   },
   {
     id: "actofin",
     name: "Actofin Gel (50g)",
     description:
-      "Fast-acting pain relief tablets combining paracetamol and caffeine. Effective for headaches, migraines, muscle aches, and toothache. Pack of 30 tablets. Manufactured under strict GMP standards.",
+      "A fast-acting topical gel that helps relieve muscle pain, joint pain, sprains, and minor body aches.",
     price: 469,
-    category: "Pain Relief Gel",
+    category: "Pain Relieving Gel",
     image: "/products/Actofin.png",
     inStock: true,
+    composition: {
+      "Cinnamon Oil (USP)": "500mg",
+      "Winter Green Oil (USP)": "50mg",
+      "Menthol (BP)": "1500mg",
+      "Thymol (USP)": "50mg",
+      "Eucalyptus Oil (USP)": "250mg",
+    },
   },
   {
     id: "salt-less",
     name: "Salt Less",
     description:
-      "Dermatologist recommended non-irritating cleanser for sensitive skin. Removes dirt and makeup without stripping natural moisture. Suitable for face and body. 250ml pump bottle.",
+      "A healthier low-sodium salt alternative designed to help reduce sodium intake without compromising taste.",
     price: 153,
-    category: "Low Sodium Salt Substitute",
+    category: "Low Sodium Salt",
     image: "/products/salt_less.png",
     inStock: true,
+    composition: ["Potassium Chloride", "Sodium Chloride", "Anti Caking Agents"],
   },
   {
     id: "k-cid",
     name: "K-Cid",
     description:
-      "Complete daily multivitamin with 24 essential nutrients including Vitamin D, B12, Iron, and Zinc. Supports immunity, energy, and overall wellness. 60 tablets, one-a-day formula.",
+      "A herbal antacid syrup that helps relieve acidity, indigestion, bloating, and acid reflux naturally.",
     price: 250,
     category: "Antacid Syrup",
     image: "/products/K-Cid.png",
     inStock: true,
+    composition: {
+      "Zingiber Officinale": "100mg",
+      "Mentha Piperita": "50mg",
+      "Trachyspermum Ammi": "50mg",
+      "Foeniculum Vulgare": "50mg",
+    },
   },
 ];
 

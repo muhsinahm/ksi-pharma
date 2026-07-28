@@ -1,16 +1,15 @@
 import { Link } from "@tanstack/react-router";
-import { Pill, ShieldCheck, Truck, HeartPulse } from "lucide-react";
+import { ShieldCheck, Truck, HeartPulse, MapPin, Phone, Mail, Clock } from "lucide-react";
 
 export function Footer() {
   return (
     <footer className="mt-24 border-t border-border/60 bg-primary/10">
       <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
-        <div className="grid gap-10 md:grid-cols-4">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
           <div>
             <Link to="/" className="flex items-center">
-              <img src="/logo_web.png" alt=" Logo" className="h-9 w-auto object-contain md:h-20" />
+              <img src="/logo_web.png" alt="Logo" className="h-12 w-auto object-contain" />
             </Link>
-            <span className="mx-2">·</span>
             <p className="mt-3 text-sm text-muted-foreground">
               Your trusted online pharmacy delivering authentic medicines across Pakistan.
             </p>
@@ -38,6 +37,37 @@ export function Footer() {
                 <Link to="/contact" className="hover:text-primary">
                   Contact
                 </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-display text-sm font-semibold">Contact & Address</h4>
+            <ul className="mt-3 space-y-2.5 text-sm text-muted-foreground">
+              <li className="flex items-start gap-2">
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                <span>Lahore, Pakistan</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <Phone className="h-4 w-4 shrink-0 text-primary" />
+                <a
+                  href="https://wa.me/923224328106"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:text-primary"
+                >
+                  +92 322 4328106
+                </a>
+              </li>
+              <li className="flex items-center gap-2">
+                <Mail className="h-4 w-4 shrink-0 text-primary" />
+                <a href="mailto:ksintpharma@gmail.com" className="hover:text-primary">
+                  ksintpharma@gmail.com
+                </a>
+              </li>
+              <li className="flex items-start gap-2">
+                <Clock className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                <span>Mon – Sat: 10:00 AM – 05:00 PM</span>
               </li>
             </ul>
           </div>
@@ -81,7 +111,7 @@ export function Footer() {
             Pakistan.
           </p>
           <p className="mt-4 text-xs text-muted-foreground">
-            © {new Date().getFullYear()} . All rights reserved.
+            © {new Date().getFullYear()} KSI Pharma. All rights reserved.
           </p>
         </div>
       </div>

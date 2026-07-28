@@ -1,5 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { ShoppingCart, Zap, ShieldCheck, Truck, ArrowLeft } from "lucide-react";
+import { ShoppingCart, Zap, ShieldCheck, Truck, ArrowLeft, FlaskConical } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -76,7 +76,7 @@ function ProductDetail() {
           <img
             src={product.image}
             alt={product.name}
-            className="aspect-square w-full object-cover"
+            className="aspect-square w-full object-contain"
           />
         </div>
 
@@ -113,8 +113,54 @@ function ProductDetail() {
             <p className="mt-3 leading-relaxed text-foreground/90">{product.description}</p>
           </div>
 
+          {product.composition && (
+            <div className="mt-6 border-t border-border/60 pt-6">
+              <div className="flex items-center gap-2">
+                <FlaskConical className="h-4 w-4 text-primary" />
+                <h2 className="font-display text-sm font-semibold uppercase tracking-wider text-muted-foreground">
+                  Composition
+                </h2>
+              </div>
+              <div className="mt-3 overflow-hidden rounded-xl border border-border bg-surface/50 text-sm">
+                {typeof product.composition === "string" ? (
+                  <p className="p-4 text-foreground/90">{product.composition}</p>
+                ) : Array.isArray(product.composition) ? (
+                  <div className="flex flex-wrap gap-2 p-4">
+                    {product.composition.map((ingredient, idx) => (
+                      <span
+                        key={idx}
+                        className="rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-xs font-medium text-primary"
+                      >
+                        {ingredient}
+                      </span>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="divide-y divide-border">
+                    {Object.entries(product.composition).map(([ingredient, strength]) => (
+                      <div
+                        key={ingredient}
+                        className="flex items-center justify-between px-4 py-2.5"
+                      >
+                        <span className="font-medium text-foreground">{ingredient}</span>
+                        <span className="rounded-full border border-primary/20 bg-primary/10 px-2.5 py-0.5 font-mono text-xs font-semibold text-primary">
+                          {strength}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
+
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Button size="lg" onClick={addToCart} disabled={!product.inStock} className="flex-1">
+            <Button
+              size="lg"
+              onClick={addToCart}
+              disabled={!product.inStock}
+              className="w-full sm:flex-1 px-4 sm:px-8"
+            >
               <ShoppingCart className="mr-2 h-4 w-4" />
               Add to Cart
             </Button>
@@ -123,7 +169,7 @@ function ProductDetail() {
               variant="outline"
               onClick={buyNow}
               disabled={!product.inStock}
-              className="flex-1"
+              className="w-full sm:flex-1 px-4 sm:px-8"
             >
               <Zap className="mr-2 h-4 w-4" />
               Buy Now

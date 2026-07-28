@@ -41,22 +41,22 @@ const info = [
   {
     icon: MapPin,
     label: "Address",
-    lines: ["Plot 42, Clifton Block 5", "Karachi, Pakistan 75600"],
+    lines: ["Lahore, Pakistan"],
   },
   {
     icon: Phone,
     label: "Phone",
-    lines: ["+92 21 3456 7890", "+92 300 1234567 (WhatsApp)"],
+    lines: ["+92 322 4328106 (WhatsApp)"],
   },
   {
     icon: Mail,
     label: "Email",
-    lines: ["care@.pk", "support@.pk"],
+    lines: ["ksintpharma@gmail.com"],
   },
   {
     icon: Clock,
     label: "Hours",
-    lines: ["Mon – Sat: 9:00 – 22:00", "Sunday: 10:00 – 18:00"],
+    lines: ["Mon – Sat: 10:00 AM – 05:00 PM"],
   },
 ];
 
