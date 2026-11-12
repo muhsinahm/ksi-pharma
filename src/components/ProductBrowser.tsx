@@ -35,7 +35,8 @@ export function ProductBrowser({
         !query ||
         p.name.toLowerCase().includes(query) ||
         p.description.toLowerCase().includes(query) ||
-        p.category.toLowerCase().includes(query);
+        p.category.toLowerCase().includes(query) ||
+        p.form.toLowerCase().includes(query);
       return matchCat && matchQuery;
     });
   }, [q, category]);

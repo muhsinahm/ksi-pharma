@@ -90,6 +90,7 @@ export default async function ProductPage({ params }: Props) {
               ) : (
                 <Badge variant="secondary">Out of Stock</Badge>
               )}
+              <span className="text-sm text-muted-foreground">Type: {product.form}</span>
               <span className="text-sm text-muted-foreground">SKU: {product.id.toUpperCase()}</span>
             </div>
 

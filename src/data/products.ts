@@ -6,6 +6,8 @@ export interface Product {
   description: string;
   price: number; // PKR
   category: string;
+  /** Dosage form / product type, e.g. "Tablet", "Syrup". */
+  form: string;
   image: string;
   inStock: boolean;
   composition?: Composition;
@@ -18,7 +20,8 @@ export const products: Product[] = [
     description:
       "A gentle feminine intimate cleanser formulated to maintain hygiene, freshness, and the natural pH balance of the intimate area.",
     price: 997,
-    category: "Feminine Intimate Cleanser",
+    category: "Women's & Maternal Health",
+    form: "Feminine Intimate Cleanser",
     image: "/products/vegi_wash.png",
     inStock: true,
     composition: ["Lactic Acid", "Triclosan", "Tea Tree Oil", "Vitamin E", "Aloe Vera"],
@@ -29,7 +32,8 @@ export const products: Product[] = [
     description:
       "A gentle feminine intimate cleanser formulated to maintain hygiene, freshness, and the natural pH balance of the intimate area.",
     price: 683,
-    category: "Feminine Intimate Cleanser",
+    category: "Women's & Maternal Health",
+    form: "Feminine Intimate Cleanser",
     image: "/products/vegi_wash.png",
     inStock: true,
     composition: ["Lactic Acid", "Triclosan", "Tea Tree Oil", "Vitamin E", "Aloe Vera"],
@@ -40,7 +44,8 @@ export const products: Product[] = [
     description:
       "A nutritional supplement formulated to support women's reproductive health, hormonal balance, and overall wellness.",
     price: 1443,
-    category: "Sachets",
+    category: "Women's & Maternal Health",
+    form: "Sachet",
     image: "/products/K-nol.png",
     inStock: true,
     composition: {
@@ -58,7 +63,8 @@ export const products: Product[] = [
     description:
       "A complete multivitamin and mineral supplement designed to support immunity, energy, and overall health.",
     price: 1000,
-    category: "Balanced Therapeutic Multivitamin-Mineral Tablet",
+    category: "Vitamins & Minerals",
+    form: "Balanced Therapeutic Multivitamin-Mineral Tablet",
     image: "/products/K-Vitum.png",
     inStock: true,
     composition: "Complete multivitamin and mineral formulation.",
@@ -69,7 +75,8 @@ export const products: Product[] = [
     description:
       "A Coenzyme Q10 supplement that helps maintain heart health and supports natural cellular energy production.",
     price: 1800,
-    category: "Tablets",
+    category: "Heart & Wellness",
+    form: "Tablet",
     image: "/products/k-zyme.png",
     inStock: true,
     composition: {
@@ -82,7 +89,8 @@ export const products: Product[] = [
     description:
       "A premium lanolin ointment that moisturizes, soothes, and protects dry, cracked, and sensitive skin.",
     price: 451,
-    category: "Skin & Nipple Ointment",
+    category: "Women's & Maternal Health",
+    form: "Skin & Nipple Ointment",
     image: "/products/M-Care.png",
     inStock: true,
     composition: {
@@ -95,7 +103,8 @@ export const products: Product[] = [
     description:
       "A melatonin supplement formulated to promote restful sleep and support a healthy sleep cycle.",
     price: 753,
-    category: "Tablets",
+    category: "Heart & Wellness",
+    form: "Tablet",
     image: "/products/K-Nomia.png",
     inStock: true,
     composition: {
@@ -108,7 +117,8 @@ export const products: Product[] = [
     description:
       "A herbal cough syrup formulated with ivy leaf extract and thyme to help relieve cough and support respiratory health.",
     price: 250,
-    category: "Cough Syrup",
+    category: "Cough, Cold & Pain Relief",
+    form: "Cough Syrup",
     image: "/products/K-Kuf.png",
     inStock: true,
     composition: {
@@ -123,7 +133,8 @@ export const products: Product[] = [
     description:
       "An iron supplement enriched with folic acid and vitamin C to help prevent and manage iron deficiency anemia.",
     price: 593,
-    category: "Tablets",
+    category: "Vitamins & Minerals",
+    form: "Tablet",
     image: "/products/K-Fer.png",
     inStock: true,
     composition: {
@@ -138,7 +149,8 @@ export const products: Product[] = [
     description:
       "An iron supplement enriched with folic acid and vitamin C to help prevent and manage iron deficiency anemia.",
     price: 250,
-    category: "Syrup",
+    category: "Vitamins & Minerals",
+    form: "Syrup",
     image: "/products/K-Fer.png",
     inStock: true,
     composition: {
@@ -152,7 +164,8 @@ export const products: Product[] = [
     description:
       "A folate and DHA supplement that supports healthy pregnancy, fetal development, and nutritional wellbeing.",
     price: 570,
-    category: "Tablets",
+    category: "Women's & Maternal Health",
+    form: "Tablet",
     image: "/products/k-folic.png",
     inStock: true,
     composition: {
@@ -166,7 +179,8 @@ export const products: Product[] = [
     description:
       "A calcium and vitamin D3 supplement formulated to support healthy bones, teeth, and muscle function.",
     price: 750,
-    category: "Tablets",
+    category: "Vitamins & Minerals",
+    form: "Tablet",
     image: "/products/k-Ca+.png",
     inStock: true,
     composition: {
@@ -181,7 +195,8 @@ export const products: Product[] = [
     description:
       "A calcium and vitamin D3 supplement formulated to support healthy bones, teeth, and muscle function.",
     price: 250,
-    category: "Syrup",
+    category: "Vitamins & Minerals",
+    form: "Syrup",
     image: "/products/k-Ca+.png",
     inStock: true,
     composition: {
@@ -195,7 +210,8 @@ export const products: Product[] = [
     description:
       "A Coenzyme Q10 supplement that supports cardiovascular health, energy production, and antioxidant protection.",
     price: 1550,
-    category: "Softgel Capsule",
+    category: "Heart & Wellness",
+    form: "Softgel Capsule",
     image: "/products/normarol.png",
     inStock: true,
     composition: {
@@ -208,7 +224,8 @@ export const products: Product[] = [
     description:
       "A soothing balm that provides effective relief from headaches, nasal congestion, colds, and flu symptoms.",
     price: 230,
-    category: "Balm",
+    category: "Cough, Cold & Pain Relief",
+    form: "Balm",
     image: "/products/OPTIDEX.png",
     inStock: true,
     composition: {
@@ -223,7 +240,8 @@ export const products: Product[] = [
     description:
       "A fast-acting topical gel that helps relieve muscle pain, joint pain, sprains, and minor body aches.",
     price: 469,
-    category: "Pain Relieving Gel",
+    category: "Cough, Cold & Pain Relief",
+    form: "Pain Relieving Gel",
     image: "/products/Actofin.png",
     inStock: true,
     composition: {
@@ -240,7 +258,8 @@ export const products: Product[] = [
     description:
       "A healthier low-sodium salt alternative designed to help reduce sodium intake without compromising taste.",
     price: 153,
-    category: "Low Sodium Salt",
+    category: "Heart & Wellness",
+    form: "Low Sodium Salt",
     image: "/products/salt_less.png",
     inStock: true,
     composition: ["Potassium Chloride", "Sodium Chloride", "Anti Caking Agents"],
@@ -251,7 +270,8 @@ export const products: Product[] = [
     description:
       "A herbal antacid syrup that helps relieve acidity, indigestion, bloating, and acid reflux naturally.",
     price: 250,
-    category: "Antacid Syrup",
+    category: "Digestive Health",
+    form: "Antacid Syrup",
     image: "/products/K-Cid.png",
     inStock: true,
     composition: {
@@ -269,6 +289,7 @@ export const categories: string[] = Array.from(new Set(products.map((p) => p.cat
 export const categorySlug = (category: string) =>
   category
     .toLowerCase()
+    .replace(/['’]/g, "")
     .replace(/&/g, "and")
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "");

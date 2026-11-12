@@ -3,7 +3,8 @@ import type { Product } from "@/data/products";
 
 export const SITE_NAME = "KS International";
 export const SITE_URL = "https://ksipharma.com";
-export const DEFAULT_OG_IMAGE = "/logo_web.png";
+/** 1200×630 branded share image used for link previews when a page has no image of its own. */
+export const DEFAULT_OG_IMAGE = "/og-image.png";
 
 export const CONTACT = {
   phone: "+92-322-4328106",
@@ -38,7 +39,9 @@ interface SeoInput {
 export function seo({ title, description, path, image, noindex }: SeoInput): Metadata {
   const fullTitle = pageTitle(title);
   const url = absoluteUrl(path);
-  const img = absoluteUrl(image ?? DEFAULT_OG_IMAGE);
+  const img = image
+    ? { url: absoluteUrl(image), alt: title ?? SITE_NAME }
+    : { url: absoluteUrl(DEFAULT_OG_IMAGE), width: 1200, height: 630, alt: SITE_NAME };
   return {
     title: { absolute: fullTitle },
     description,
@@ -112,6 +115,7 @@ export function productJsonLd(product: Product) {
     image: absoluteUrl(product.image),
     sku: product.id.toUpperCase(),
     category: product.category,
+    additionalProperty: { "@type": "PropertyValue", name: "Form", value: product.form },
     brand: { "@type": "Brand", name: SITE_NAME },
     url: absoluteUrl(`/products/${product.id}`),
     offers: {
