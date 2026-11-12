@@ -1,4 +1,5 @@
-import { Link } from "@tanstack/react-router";
+import Image from "next/image";
+import Link from "next/link";
 import { ShieldCheck, Truck, HeartPulse, MapPin, Phone, Mail, Clock } from "lucide-react";
 
 export function Footer() {
@@ -7,8 +8,14 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
           <div>
-            <Link to="/" className="flex items-center">
-              <img src="/logo_web.png" alt="Logo" className="h-12 w-auto object-contain" />
+            <Link href="/" className="flex items-center">
+              <Image
+                src="/logo_web.png"
+                alt="KS International logo"
+                width={151}
+                height={111}
+                className="h-12 w-auto object-contain"
+              />
             </Link>
             <p className="mt-3 text-sm text-muted-foreground">
               Your trusted online pharmacy delivering authentic medicines across Pakistan.
@@ -19,22 +26,22 @@ export function Footer() {
             <h4 className="font-display text-sm font-semibold">Quick Links</h4>
             <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
               <li>
-                <Link to="/" className="hover:text-primary">
+                <Link href="/" className="hover:text-primary">
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/products" className="hover:text-primary">
+                <Link href="/products" className="hover:text-primary">
                   Products
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="hover:text-primary">
+                <Link href="/about" className="hover:text-primary">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="hover:text-primary">
+                <Link href="/contact" className="hover:text-primary">
                   Contact
                 </Link>
               </li>

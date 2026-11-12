@@ -11,15 +11,6 @@ export interface Product {
   composition?: Composition;
 }
 
-export const categories = [
-  "Pain Relief",
-  "Vitamins & Supplements",
-  "Cold & Flu",
-  "Diabetes Care",
-  "Skin Care",
-  "First Aid",
-] as const;
-
 export const products: Product[] = [
   {
     id: "vegi-wash",
@@ -33,7 +24,7 @@ export const products: Product[] = [
     composition: ["Lactic Acid", "Triclosan", "Tea Tree Oil", "Vitamin E", "Aloe Vera"],
   },
   {
-    id: "vegi-wash",
+    id: "vegi-wash-100ml",
     name: "Vegi Wash (100ml)",
     description:
       "A gentle feminine intimate cleanser formulated to maintain hygiene, freshness, and the natural pH balance of the intimate area.",
@@ -271,5 +262,17 @@ export const products: Product[] = [
     },
   },
 ];
+
+/** Categories actually used by products, in first-seen order. */
+export const categories: string[] = Array.from(new Set(products.map((p) => p.category)));
+
+export const categorySlug = (category: string) =>
+  category
+    .toLowerCase()
+    .replace(/&/g, "and")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+
+export const categoryFromSlug = (slug: string) => categories.find((c) => categorySlug(c) === slug);
 
 export const formatPKR = (n: number) => `Rs. ${n.toLocaleString("en-PK")}`;

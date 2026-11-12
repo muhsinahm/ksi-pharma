@@ -1,4 +1,5 @@
-import { Link } from "@tanstack/react-router";
+import Image from "next/image";
+import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -8,15 +9,15 @@ export function ProductCard({ product }: { product: Product }) {
   return (
     <Card className="group flex h-full flex-col overflow-hidden border-border/60 bg-card transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/10">
       <Link
-        to="/products/$id"
-        params={{ id: product.id }}
+        href={`/products/${product.id}`}
         className="relative block aspect-square overflow-hidden bg-white"
       >
-        <img
+        <Image
           src={product.image}
           alt={product.name}
-          loading="lazy"
-          className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-105"
+          fill
+          sizes="(min-width: 1280px) 25vw, (min-width: 768px) 50vw, 100vw"
+          className="object-contain transition-transform duration-500 group-hover:scale-105"
         />
         {!product.inStock && (
           <Badge
@@ -41,9 +42,7 @@ export function ProductCard({ product }: { product: Product }) {
             {formatPKR(product.price)}
           </span>
           <Button asChild size="sm" variant="outline">
-            <Link to="/products/$id" params={{ id: product.id }}>
-              View Details
-            </Link>
+            <Link href={`/products/${product.id}`}>View Details</Link>
           </Button>
         </div>
       </CardContent>
